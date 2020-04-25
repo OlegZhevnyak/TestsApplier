@@ -18,42 +18,42 @@ public class EngineersTestKit {
 
     @Test
     public void verifyDefaultAnxietyOfTestEngineer() {
-        Assert.assertEquals("Value of Anxiety should be default = 3)", 3, testE.getAnxiety());
+        Assert.assertEquals("Value of Anxiety should be default = 3.", 3, testE.getAnxiety());
     }
 
     @Test
     public void verifySettingAnxietyOfAutomationEngineer() {
         autoE.setAnxiety(10);
-        Assert.assertEquals("Value of Anxiety should be setted = 10", 10, autoE.getAnxiety());
+        Assert.assertEquals("Value of Anxiety should be setted = 10.", 10, autoE.getAnxiety());
     }
 
     @Test
     public void verifyRandomSkillGeneration() {
-        Assert.assertTrue("Value of Skill crossed the borders", 0 < autoE.getSkill() && testE.getSkill() < 11);
+        Assert.assertTrue("Value of Skill crossed the borders.", 0 < autoE.getSkill() && testE.getSkill() < 11);
     }
 
     @Test
     public void verifyUnitTestComplexity() {
         AutomatedTest automatedTestUnit = new AutomatedTest(TestLevel.UNIT, 1);
-        Assert.assertEquals("Value of UnitTest Complexity != 1", 1, automatedTestUnit.getComplexity());
+        Assert.assertEquals("Value of UnitTest Complexity != 1.", 1, automatedTestUnit.getComplexity());
     }
 
     @Test
     public void verifyAPITestComplexity() {
         ManualTest manualTestAPI = new ManualTest(TestLevel.API, 5);
-        Assert.assertEquals("Value of APITest Complexity != 3", 3, manualTestAPI.getComplexity());
+        Assert.assertEquals("Value of APITest Complexity != 3.", 3, manualTestAPI.getComplexity());
     }
 
     @Test
     public void verifyGUITestComplexity() {
         AutomatedTest automatedTestGUI = new AutomatedTest(TestLevel.GUI, 8);
-        Assert.assertEquals("Value of GUITest Complexity != 9", 9, automatedTestGUI.getComplexity());
+        Assert.assertEquals("Value of GUITest Complexity != 9.", 9, automatedTestGUI.getComplexity());
     }
 
     @Test
     public void verifyInstabilityInitialisation() {
         ManualTest manualTestUnit = new ManualTest(TestLevel.UNIT, 2);
-        Assert.assertEquals("Value of Instability should be = 2", 2, manualTestUnit.getInstability());
+        Assert.assertEquals("Value of Instability should be = 2.", 2, manualTestUnit.getInstability());
     }
 
     //AutomationEngineer applies tests
@@ -71,7 +71,7 @@ public class EngineersTestKit {
         AutomatedTest automatedTestAPI = new AutomatedTest(TestLevel.API, 5);
         AutomationEngineer automationEngineer = new AutomationEngineer();
         automationEngineer.setSkill(MAXSKILL);
-        Assert.assertEquals("Test should be PASSED: ",
+        Assert.assertEquals("Test should be PASSED.",
                 Result.PASSED, automatedTestAPI.apply(automationEngineer));
     }
 
@@ -80,7 +80,7 @@ public class EngineersTestKit {
         AutomatedTest automatedTestGUI = new AutomatedTest(TestLevel.GUI, 9);
         AutomationEngineer automationEngineer = new AutomationEngineer();
         automationEngineer.setSkill(MINSKILL);
-        Assert.assertEquals("Test should be FAILED: ",
+        Assert.assertEquals("Test should be FAILED.",
                 Result.FAILED, automatedTestGUI.apply(automationEngineer));
     }
 
@@ -88,7 +88,7 @@ public class EngineersTestKit {
     public void AutomationEngineerExecutedManualUnitTest() {
         ManualTest manualTestUnit = new ManualTest(TestLevel.API, 1);
         AutomationEngineer automationEngineer = new AutomationEngineer();
-        Assert.assertEquals("Test should be PASSED: ",
+        Assert.assertEquals("Test should be PASSED.",
                 Result.PASSED, manualTestUnit.apply(automationEngineer));
     }
 
@@ -97,7 +97,7 @@ public class EngineersTestKit {
         ManualTest manualTestGUI = new ManualTest(TestLevel.GUI, 9);
         AutomationEngineer automationEngineer = new AutomationEngineer();
         automationEngineer.setSkill(MINSKILL);
-        Assert.assertEquals("Test should be FAILED: ",
+        Assert.assertEquals("Test should be FAILED.",
                 Result.FAILED, manualTestGUI.apply(automationEngineer));
     }
 
@@ -107,7 +107,7 @@ public class EngineersTestKit {
     public void TestEngineerExecutedManualUnitTest() {
         ManualTest manualTestUnit = new ManualTest(TestLevel.UNIT, 1);
         TestEngineer testEngineer = new TestEngineer();
-        Assert.assertEquals("Test should be PASSED: ",
+        Assert.assertEquals("Test should be PASSED.",
                 Result.PASSED, manualTestUnit.apply(testEngineer));
     }
 
@@ -116,7 +116,7 @@ public class EngineersTestKit {
         ManualTest manualTestAPI = new ManualTest(TestLevel.API, 5);
         TestEngineer testEngineer = new TestEngineer();
         testEngineer.setSkill(MAXSKILL);
-        Assert.assertEquals("Test should be PASSED: ",
+        Assert.assertEquals("Test should be PASSED.",
                 Result.PASSED, manualTestAPI.apply(testEngineer));
     }
 
@@ -125,7 +125,7 @@ public class EngineersTestKit {
         ManualTest manualTestGUI = new ManualTest(TestLevel.GUI, 9);
         TestEngineer testEngineer = new TestEngineer();
         testEngineer.setSkill(MINSKILL);
-        Assert.assertEquals("Test should be FAILED: ",
+        Assert.assertEquals("Test should be FAILED.",
                 Result.FAILED, manualTestGUI.apply(testEngineer));
     }
 
@@ -133,7 +133,7 @@ public class EngineersTestKit {
     public void TestEngineerExecutedAutomatedUnitTest() {
         AutomatedTest automatedTestUnit = new AutomatedTest(TestLevel.UNIT, 1);
         TestEngineer testEngineer = new TestEngineer();
-        Assert.assertEquals("Test should be PASSED: ",
+        Assert.assertEquals("Test should be PASSED.",
                 Result.PASSED, automatedTestUnit.apply(testEngineer));
     }
 
@@ -142,7 +142,7 @@ public class EngineersTestKit {
         AutomatedTest automatedTestGUI = new AutomatedTest(TestLevel.GUI, 9);
         TestEngineer testEngineer = new TestEngineer();
         testEngineer.setSkill(MINSKILL);
-        Assert.assertEquals("Test should be FAILED: ",
+        Assert.assertEquals("Test should be FAILED.",
                 Result.FAILED, automatedTestGUI.apply(testEngineer));
     }
 }

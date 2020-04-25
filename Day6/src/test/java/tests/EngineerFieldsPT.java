@@ -31,23 +31,23 @@ public class EngineerFieldsPT {
 
     @Test
     public void verifyDefaultAnxietyOfEngineer() {
-        Assert.assertEquals("Value of Anxiety should be default = 3)", 3, engineer.getAnxiety());
+        Assert.assertEquals("Value of Anxiety should be default = 3.", 3, engineer.getAnxiety());
     }
 
     @Test
     public void verifyRandomSkillGeneration() {
-        Assert.assertTrue("Value of Skill crossed the borders", 0 < engineer.getSkill() && engineer.getSkill() < 11);
+        Assert.assertTrue("Value of Skill crossed the borders.", 0 < engineer.getSkill() && engineer.getSkill() < 11);
     }
 
     @Test
     public void verifySettingMAXSkillOfEngineer() {
         engineer.setSkill(MAXSKILL);
-        Assert.assertEquals("Value of Skill should be setted = 10", 10, engineer.getSkill());
+        Assert.assertEquals("Value of Skill should be setted = 10.", 10, engineer.getSkill());
     }
 
     @Test
     public void verifySettingMINSkillOfEngineer() {
         engineer.setSkill(MINSKILL);
-        Assert.assertEquals("Value of Skill should be setted = 1", 1, engineer.getSkill());
+        Assert.assertEquals("Value of Skill should be setted = 1.", 1, engineer.getSkill());
     }
 }
