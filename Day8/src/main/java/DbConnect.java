@@ -4,22 +4,26 @@ import com.mysql.cj.jdbc.exceptions.MySQLTimeoutException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 public class DbConnect {
 
     static Properties properties = getProperties();
 
+    String query = "SELECT * FROM Categories where CategoryID =?";
+
+
     public static void main(String[] args) throws SQLException {
-        Properties prop = getProperties();
-        prop.forEach((k, v) -> System.out.println(v.toString()));
-        String query = "SHOW TABLES";
-        executeStatement(query);
+//        Properties prop = getProperties();
+//        prop.forEach((k, v) -> System.out.println(v.toString()));
+//        String query = "SHOW TABLES";
+        String query = "SELECT * FROM Categories where CategoryID =?";
+        executePreparedStatement(query, 1);
+//        executeStatement(query);
+
     }
+
 
     private static Properties getProperties() {
 
@@ -45,17 +49,32 @@ public class DbConnect {
         return dataSource;
     }
 
-    private static void executeStatement(String query) throws SQLException {
-        try {
-            Connection connection = getDatasource(properties).getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(query);
+//    private static void executeStatement(String query) throws SQLException {
+//        try {
+//            Connection connection = getDatasource(properties).getConnection();
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(query);
+//
+//            if (rs.next()) {
+//                System.out.println(rs.getString(1));
+//            }
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 
-            if (rs.next()) {
-                System.out.println(rs.getString(1));
+    private static void executePreparedStatement(String query, int id) throws SQLException {
+        try (Connection connection = getDatasource(properties).getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, id);
+            try (ResultSet rs = statement.executeQuery()) {
+                if (rs.next()) {
+                    System.out.println(rs.getString(2));
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
     }
 }
