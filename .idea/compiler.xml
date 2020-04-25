@@ -13,7 +13,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Day6" target="1.5" />
-      <module name="Day8" target="1.5" />
+      <module name="Day8" target="1.8" />
       <module name="TestsApplier" target="1.5" />
     </bytecodeTargetLevel>
   </component>
