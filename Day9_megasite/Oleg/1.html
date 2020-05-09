@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="style.css" rel="stylesheet">
+    <title>My very first web page</title>
+    <link rel="shortcut icon" href="/images/Oleg_1.jpg" type="image/png">
+
+    <script>
+        var valVar;
+
+        function hideValue(x) (
+            valVar = x.get Attribute("value");
+            x.setAttribute("value", "");
+        )
+        function setValue(x) (
+            x.setAttribute("value", "valVar");
+        )
+    </script>
+
+    <style type="text/css">
+     * {
+     text-align: center;
+     }
+     input {
+     background-position: center;
+     color: white;
+     width: 500px;
+     height: 150px;
+     font-size: 300%;
+     font-weight: bold;
+     border: none;
+     cursor: pointer;
+     }
+     #goback{
+     background: url(/images/backg_space3.jpg);
+     }
+     #goback:hover{
+     color:deeppink;
+     background: url(/images/space0.jpg);
+     }
+     h1 {
+     font-size: 500%;
+     font-family: "Century Gothic", sans-serif;
+     color: #333366;
+     }
+     p {
+     font-size: 12pt;
+     font-family: "Comic Sans MS", sans-serif;
+     color: gray;
+     }
+    </style>
+</head>
+<h1>1</h1>
+
+
+<form method="get" action="index.html">
+    <!--onclick="location.href='index.html'"-->
+    <input type="submit" id="goback" value="Go Back" onmouseover="hideValue(this)" onmouseout="setValue(this)">
+</form>
+<br>
+<br>
+<p>This is just a dummy site (c)</p>
+</body>
+</html>
