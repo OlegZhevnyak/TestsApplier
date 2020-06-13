@@ -77,6 +77,7 @@ public class LowestPriceTest {
         int pricePerDay = Integer.parseInt(priceTextFinal) / 10;
         System.out.println("Price per day: " + pricePerDay);
 
-        Assert.assertTrue("pricePerDay should be < then highestPricePerDay", pricePerDay < highestPricePerDay);
+        Assert.assertTrue("pricePerDay should be < then highestPricePerDay",
+                pricePerDay <= highestPricePerDay);
     }
 }

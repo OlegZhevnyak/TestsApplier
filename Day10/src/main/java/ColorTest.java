@@ -64,7 +64,8 @@ public class ColorTest {
         WebElement hotelName = driver.findElement(By.xpath("//div[@id=\"hotellist_inner\"]/div[10]//h3/a/span[1]"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].style.color = 'red'", hotelName);
 
-        Assert.assertEquals("hotelName color should be red", "color: red;", hotelName.getAttribute("style"));
+        Assert.assertEquals("hotelName color should be red",
+                "color: red;", hotelName.getAttribute("style"));
 
         ((JavascriptExecutor)driver).executeScript("arguments[0].style.backgroundColor = 'green'", hotelName);
     }

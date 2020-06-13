@@ -70,6 +70,6 @@ public class HighestPriceTest {
         int pricePerDay = Integer.parseInt(priceTextFinal) / 7;
         System.out.println("Price per day: " + pricePerDay);
 
-        Assert.assertTrue("highestPricePerDay should be > then pricePerDay", highestPricePerDay >= pricePerDay);
+        Assert.assertTrue("highestPricePerDay should be >= then pricePerDay", highestPricePerDay >= pricePerDay);
     }
 }
